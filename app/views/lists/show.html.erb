@@ -1,1 +1,12 @@
-<h1>Test, this page is SHOW</h1>
+<h1>Movies on this list</h1>
+<%= @list.name %>
+<hr>
+<% @list.bookmarks.each do |bookmark| %>
+  <h3>Name: <%= bookmark.movie.title %></h3>
+  <h3>Rating: <%= bookmark.movie.rating %></h3>
+  <h4>Comments: <%= bookmark.comment %></h4>
+<% end %>
+
+<hr>
+<h1>Add a movie to this list?</h1>
+<%= render 'form_add' %>

@@ -6,7 +6,9 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @movie = Movie.all
+    @movies = Movie.all
+    @bookmark = Bookmark.new
+    @bookmarks = Bookmark.all
   end
 
 # new
