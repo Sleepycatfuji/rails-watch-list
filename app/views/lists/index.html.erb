@@ -1,9 +1,15 @@
+<div class ="container">
+<div class="page-header">
 <h1>Movie Watch List</h1>
-<%= link_to 'New Watch List', new_list_path, class: 'btn btn-success mt-3' %>
+</div>
+<%= link_to 'Add Watch List', new_list_path, class: 'btn btn-success mt-3' %>
 <% @lists.each do |list| %>
 <% if list.photo.attached? %>
-<%= cl_image_tag(  list.photo.key , width: 150, height: 150, crop: :thumb, gravity: :face) %>
+<h2> <%= list.name %> </h2>
+<%= link_to cl_image_tag(  list.photo.key , width: 150, height: 150, crop: :thumb, gravity: :face),
+new_list_path %>
 <% else %>
 <%= cl_image_tag( "sample" , width: 150, height: 150, crop: :thumb, gravity: :face) %>
 <% end %>
 <% end %>
+</div>
