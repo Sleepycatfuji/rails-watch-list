@@ -1,15 +1,19 @@
-<div class ="container">
-<div class="page-header">
-<h1>Movie Watch List</h1>
+<div class="banner">
+  <div class="container">
+    <h1>Watch movies</h1>
+      <br>
+    <p>Watch in style</p>
+    <%= link_to 'Add Watch List', new_list_path, class: "btn btn-light" %>
+  </div>
 </div>
-<%= link_to 'Add Watch List', new_list_path, class: 'btn btn-success mt-3' %>
+<div class="flex-container">
+
 <% @lists.each do |list| %>
-<% if list.photo.attached? %>
-<h2> <%= list.name %> </h2>
-<%= link_to cl_image_tag(  list.photo.key , width: 150, height: 150, crop: :thumb, gravity: :face),
-new_list_path %>
-<% else %>
-<%= cl_image_tag( "sample" , width: 150, height: 150, crop: :thumb, gravity: :face) %>
-<% end %>
-<% end %>
+  <% render "card", list: list  %>
+
+  <% end %>
+  </div>
 </div>
+</body>
+
+</html>

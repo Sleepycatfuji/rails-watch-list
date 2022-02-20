@@ -1,1 +1,5 @@
-# create simpleform, put it here
+<% @list.bookmarks.each do |bookmark| %>
+
+<h1>Bookmark has been created for <%= bookmark.movie.title %> </h1>
+
+<% end %>

@@ -1,0 +1,9 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+
+  <% if list.photo.attached? %>
+    <h2> <%= list.name %> </h2>
+    <%= link_to cl_image_tag(  list.photo.key , width: 150, height: 150, crop: :thumb, gravity: :face),
+  list_path(list) %>
+    <% end %>
+
+</div>
