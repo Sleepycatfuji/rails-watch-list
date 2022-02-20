@@ -1,6 +1,6 @@
 <div class="banner">
   <div class="container">
-    <h1>Watch movies</h1>
+    <h1>Watch some movies</h1>
       <br>
     <p>Watch in style</p>
     <%= link_to 'Add Watch List', new_list_path, class: "btn btn-light" %>
@@ -9,7 +9,7 @@
 <div class="flex-container">
 
 <% @lists.each do |list| %>
-  <% render "card", list: list  %>
+  <% render "./application/card", list: list  %>
 
   <% end %>
   </div>
